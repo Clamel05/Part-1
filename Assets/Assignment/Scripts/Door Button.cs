@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinnyCheese : MonoBehaviour
+public class DoorButton : MonoBehaviour
 {
+
+    public float Distance = -4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +19,10 @@ public class SpinnyCheese : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        transform.Rotate(0, 0, Time.deltaTime);
+        
+        
+        transform.Translate(0,Distance,0);
     }
 }
